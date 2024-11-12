@@ -1,0 +1,29 @@
+import React, { useState } from 'react';
+
+const StudentList = () => {
+    const [students, setStudents] = useState([
+        { name: 'Олександр', age: 20, specialty: 'Інформатика', level: 'початковий' },
+        { name: 'Марія', age: 22, specialty: 'Фізика', level: 'середній' },
+        { name: 'Іван', age: 21, specialty: 'Математика', level: 'просунутий' },
+        { name: 'Ольга', age: 23, specialty: 'Біологія', level: 'середній' }
+    ]);
+
+    return (
+        <div>
+            <h2>Список студентів</h2>
+            <ul>
+                {students.map((student, index) => (
+                    <li key={index}>
+                        <strong>Ім'я:</strong> {student.name} <br />
+                        <strong>Вік:</strong> {student.age} <br />
+                        <strong>Спеціальність:</strong> {student.specialty} <br />
+                        <strong>Рівень знань:</strong> {student.level} <br />
+                        <hr />
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default StudentList;
